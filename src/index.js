@@ -15,6 +15,14 @@ import { DB_NAME } from "./constants.js";
 
 
 connectDB()
+.then(() => {
+    app.listen(process.env.PORT || 8000 ,()=>{
+        console.log(`sever is running at port ${process.env.PORT}`);
+    })
+})
+.catch((error)=>{
+    console.log("mongo db connection failed ",error);
+})
 
 
 
